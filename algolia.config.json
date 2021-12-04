@@ -1,0 +1,19 @@
+{
+  "defaultRanking": ["desc(name)"],
+  "rankings": [
+    {
+      "prefix": "price_desc",
+      "ranking": [
+        "desc(price)"
+      ]
+    },
+    {
+      "prefix": "price_asc",
+      "ranking": [
+        "desc(price)"
+      ]
+    }
+  ],
+  "searchableAttributes": ["name"],
+  "attributesForFaceting": ["attribute.brand"]
+}

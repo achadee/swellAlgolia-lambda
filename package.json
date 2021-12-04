@@ -1,0 +1,26 @@
+{
+  "name": "swellalgolia-lambda",
+  "version": "1.0.0",
+  "description": "a lambda function that indexes products &amp; categories from Swell to Algolia",
+  "main": "product.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achadee/swellAlgolia-lambda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/achadee/swellAlgolia-lambda/issues"
+  },
+  "homepage": "https://github.com/achadee/swellAlgolia-lambda#readme",
+  "devDependencies": {
+    "serverless-offline": "^8.3.1"
+  },
+  "dependencies": {
+    "algoliasearch": "^4.11.0",
+    "swell-node": "^4.0.9"
+  }
+}
