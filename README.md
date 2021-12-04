@@ -1,6 +1,8 @@
 # Swell (Ecommerce) / Algolia Integration
 This Module is a deep integration with Swell and Algolia allowing you to rank, facet and replicate
 
+This module deploys to AWS Lambda
+
 <img src="https://user-images.githubusercontent.com/5952918/144704411-a11545c3-53d7-4864-8d40-662e2219bb1f.png" alt="alt text" width="100">
 <img src="https://user-images.githubusercontent.com/5952918/144704417-5bf94916-de01-4261-8f49-7b4a27fa38cb.png" alt="alt text" width="100">
 
@@ -71,6 +73,7 @@ And create a webhook as so:
 
 
 Replace `my-serverless-domain` with your cloudfront, or route53 domain generated from serverless on deploy
+
 Replace `stage` with your environment stage so something like `dev` or `prod`
 
 
