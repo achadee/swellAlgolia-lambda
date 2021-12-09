@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "algoliasearch": "^4.11.0",
+    "cli-progress": "^3.9.1",
     "swell-node": "^4.0.9"
   }
 }

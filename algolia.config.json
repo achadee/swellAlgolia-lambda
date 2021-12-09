@@ -2,18 +2,18 @@
   "defaultRanking": ["desc(name)"],
   "rankings": [
     {
-      "prefix": "price_desc",
+      "suffix": "price_desc",
       "ranking": [
         "desc(price)"
       ]
     },
     {
-      "prefix": "price_asc",
+      "suffix": "price_asc",
       "ranking": [
         "desc(price)"
       ]
     }
   ],
   "searchableAttributes": ["name"],
-  "attributesForFaceting": ["attribute.brand"]
+  "attributesForFaceting": ["attribute.brand", "categories"]
 }

@@ -5,8 +5,15 @@ const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_ADM
 const index = client.initIndex(process.env.ALGOLIA_INDEX);
 
 
-module.exports.indexProduct = async (product, id) => {
-  index.saveObject({ objectID: id, ...product })
+module.exports.indexProduct = async (product, categories, id) => {
+  index.saveObject(
+    {
+      objectID: id,
+      ...product,
+      category_slugs: categories.slugs,
+      categories: categories.names
+    }
+  )
 };
 
 module.exports.removerProductFromIndex = async (id) => {
@@ -15,7 +22,7 @@ module.exports.removerProductFromIndex = async (id) => {
 
 module.exports.setSettings = async () => {
   // set parent settings
-  let replicas = config.rankings.map((ranking) => `${process.env.ALGOLIA_INDEX}_${ranking.prefix}`);
+  let replicas = config.rankings.map((ranking) => `${process.env.ALGOLIA_INDEX}_${ranking.suffix}`);
 
   await index.setSettings({
     replicas,
@@ -27,12 +34,12 @@ module.exports.setSettings = async () => {
   // update ranking on each of the replicas
   for (const replica of replicas) {
     let replicaIndex = client.initIndex(replica);
-    let prefixName = replica.replace(`${process.env.ALGOLIA_INDEX}_`, '')
-    
+    let suffixName = replica.replace(`${process.env.ALGOLIA_INDEX}_`, '')
+
     await replicaIndex.setSettings({
       attributesForFaceting: config.attributesForFaceting,
       searchableAttributes: config.searchableAttributes,
-      ranking: config.rankings.find((ranking) => ranking.prefix == prefixName).ranking
+      ranking: config.rankings.find((ranking) => ranking.suffix == suffixName).ranking
     })
   };
 

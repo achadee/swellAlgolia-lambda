@@ -28,20 +28,20 @@ Update the Algolia config (`algolia.config.json`) to what you need for your proj
   "defaultRanking": ["desc(name)"],
   "rankings": [
     {
-      "prefix": "price_desc",
+      "suffix": "price_desc",
       "ranking": [
         "desc(price)"
       ]
     },
     {
-      "prefix": "price_asc",
+      "suffix": "price_asc",
       "ranking": [
-        "asc(price)"
+        "desc(price)"
       ]
     }
   ],
   "searchableAttributes": ["name"],
-  "attributesForFaceting": ["attribute.brand"]
+  "attributesForFaceting": ["attribute.brand", "categories"]
 }
 ```
 
