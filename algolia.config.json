@@ -15,5 +15,17 @@
     }
   ],
   "searchableAttributes": ["name"],
-  "attributesForFaceting": ["attribute.brand", "categories"]
+  "attributesForFaceting": ["attributes.brand", "categories"],
+  "renderingContent": {
+    "facetOrdering": {
+      "facets": {
+        "order": ["categories", "attributes.brand"]
+      },
+      "values": {
+        "attribute.brand": {
+          "sortRemainingBy": "alpha"
+        }
+      }
+    }
+  }
 }

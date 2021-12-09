@@ -28,7 +28,8 @@ module.exports.setSettings = async () => {
     replicas,
     attributesForFaceting: config.attributesForFaceting,
     searchableAttributes: config.searchableAttributes,
-    ranking: config.defaultRanking
+    ranking: config.defaultRanking,
+    renderingContent: config.renderingContent
   })
 
   // update ranking on each of the replicas

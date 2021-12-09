@@ -19,11 +19,14 @@ const getPageOfProducts = async (pageNumber) => {
 // returns a category list from a cached all category list
 const getCategoriesFromList = (product, allCategories) => {
   const result = {names: [], slugs: []}
-  for (const categoryId of product.category_index.id) {
-    let matchedCategory = allCategories.find((cat) => cat.id)
 
-    result.names.push(matchedCategory.name)
-    result.slugs.push(matchedCategory.slug)
+  for (const categoryId of product.category_index.id) {
+    let matchedCategory = allCategories.find((cat) => cat.id == categoryId)
+
+    if ( matchedCategory ) {
+      result.names.push(matchedCategory.name)
+      result.slugs.push(matchedCategory.slug)
+    }
   }
 
   return result
