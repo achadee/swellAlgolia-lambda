@@ -15,11 +15,28 @@
     }
   ],
   "searchableAttributes": ["name"],
-  "attributesForFaceting": ["attributes.brand", "categories"],
+  "attributesForFaceting": [
+    "attributes.brand",
+    "categories",
+    "filterOnly(category_slugs)",
+    "attributes.colour",
+    "attributes.size",
+    "attributes.condition",
+    "attributes.material",
+    "attributes.vendor"
+  ],
   "renderingContent": {
     "facetOrdering": {
       "facets": {
-        "order": ["categories", "attributes.brand"]
+        "order": [
+          "categories",
+          "attributes.brand",
+          "attributes.colour",
+          "attributes.size",
+          "attributes.condition",
+          "attributes.material",
+          "attributes.vendor"
+        ]
       },
       "values": {
         "attribute.brand": {
